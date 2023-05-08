@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   dining_philo_problem.h                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romvan-d <romvan-d@student.s19.be>         +#+  +:+       +#+        */
+/*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/27 14:52:46 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/04/27 15:00:30 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/05/04 15:02:09 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/05/08 15:07:10 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#ifndef DINING_PHILO_PROBLEM_H
+# define DINING_PHILO_PROBLEM_H
+# include "philo.h"
 
-int	is_whitespace(char *string)
-{
-	int	i;
+// void	*run_process(t_philo_datas *datas, t_philo **array_of_philos);
 
-	i = 0;
-	while(string[i])
-}
-
-int	ft_atoi(char *string)
-{
-	
-}
+#endif

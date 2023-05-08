@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   destroy_philos.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 14:35:16 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/08 15:57:30 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/05/03 14:28:16 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/05/08 15:56:21 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#include "philo.h"
 
-size_t	ft_strlen(char *string);
-void	destroy_philos(t_philo **array_of_philos);
-int		my_atoi(const char *str);
-long	calculate_time(void);
+void	destroy_philos(t_philo **array_of_philos)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (array_of_philos[i])
+	{
+		free(array_of_philos[i]);
+		++i;
+	}
+	free(array_of_philos);
+}
