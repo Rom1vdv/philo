@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:34:10 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/08 15:35:33 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:45:16 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ enum e_errors {
 
 typedef struct s_philo_datas
 {
-	int	number_of_philos;
-	int	time_to_die;
-	int	time_to_eat;
-	int	time_to_sleep;
-	int	number_of_time_philo_eat;
+	int		number_of_philos;
+	int		time_to_die;
+	int		time_to_eat;
+	int		time_to_sleep;
+	int		number_of_time_philo_eat;
+	bool	is_dead;
 	
 }   t_philo_datas;
 

@@ -6,11 +6,11 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 14:52:46 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/03 15:50:13 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:04:18 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/philo.h"
+#include "philo.h"
 
 static int	ft_iswhitespace(const char *str, int i)
 {

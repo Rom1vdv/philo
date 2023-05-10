@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:02:09 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/08 15:07:10 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:47:27 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 # define DINING_PHILO_PROBLEM_H
 # include "philo.h"
 
-// void	*run_process(t_philo_datas *datas, t_philo **array_of_philos);
+void	*run_process(void *arg);
 
 #endif

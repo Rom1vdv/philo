@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:40:35 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/08 15:57:46 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:17:08 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	init_datas(char **av, int ac, t_philo_datas *philo_datas)
 	philo_datas->time_to_die = my_atoi(av[1]);
 	philo_datas->time_to_eat = my_atoi(av[2]);
 	philo_datas->time_to_sleep = my_atoi(av[3]);
+	philo_datas->is_dead = ALIVE;
 	if (ac == 5)
 		philo_datas->number_of_time_philo_eat = -1;
 	else
@@ -36,6 +37,7 @@ int	init_philos(t_philo_datas *philo_datas, t_philo **array_of_philos)
 		return (ERROR_THREAD);
 	if (join_threads(philo_datas, *array_of_philos != 0))
 		return (ERROR_THREAD);
+	return (SUCCESS);
 }
 
 int	main(int ac, char **av)
