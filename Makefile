@@ -6,15 +6,15 @@
 #    By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/08 15:04:59 by romvan-d          #+#    #+#              #
-#    Updated: 2023/05/08 17:04:25 by romvan-d         ###   ########.fr        #
+#    Updated: 2023/05/15 17:53:55 by romvan-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 
-FILES = init_philos main parsing
+FILES = main parsing init_philos dining_philo_problem
 
-UTILS_FILES = destroy_philos my_atoi timestamp
+UTILS_FILES = destroy_philos my_atoi timestamp error_handling displaying_message my_sleep
 
 SRCS = $(addprefix utils/, $(addsuffix .c, $(UTILS_FILES))) \
 	$(addprefix sources/, $(addsuffix .c, $(FILES)))
@@ -25,7 +25,7 @@ RM = rm -f
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -I ./includes
+CFLAGS = -Wall -Wextra -Werror -I ./includes -pthread -fsanitize=thread -g
 
 
 $(NAME): $(OBJS)

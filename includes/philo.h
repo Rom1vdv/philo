@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:42:02 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/10 17:16:31 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/11 11:50:20 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <pthread.h>
 # include <stdio.h>
-# include <stdbool.h>
 # include <sys/time.h>
 # include "structs.h"
 # include "parsing.h"
@@ -24,7 +23,7 @@
 # include "init_philos.h"
 # include "dining_philo_problem.h"
 
-# define ALIVE true
-# define DEAD false
+# define ALIVE 1
+# define DEAD 0
 
 #endif

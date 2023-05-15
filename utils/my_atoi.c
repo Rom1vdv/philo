@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 14:52:46 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/08 17:04:18 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:36:34 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ int	my_atoi(const char *str)
 			number += str[i] - 48;
 		}
 		else
-			return (ERROR_ARG);
+			return (ERROR_ARG_VALIDITY);
 		i++;
 	}
 	if (sign == 1)
 		number *= -1;
 	if (number <= 0 || number >= 2147483648)
-		return (ERROR_ARG);
+		return (ERROR_ARG_VALIDITY);
 	return ((int) number);
 }
