@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:40:35 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/15 18:00:12 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:52:31 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 int	init_datas(char **av, int ac, t_philo_datas *philo_datas)
 {
+	int i;
+
+	i = 0;
 	philo_datas->number_of_philos = my_atoi(av[1]);
 	philo_datas->time_to_die = my_atoi(av[2]);
 	philo_datas->time_to_eat = my_atoi(av[3]);
@@ -21,6 +24,12 @@ int	init_datas(char **av, int ac, t_philo_datas *philo_datas)
 	philo_datas->forks = malloc(sizeof(philo_datas->forks) * philo_datas->number_of_philos);
 	if (!philo_datas->forks)
 		return (ERROR_ALLOCATION);
+	while(i < philo_datas->number_of_philos)
+	{
+		if (pthread_mutex_init(&philo_datas->forks[i], NULL) != 0)
+			return (ERROR_THREAD);
+		++i;
+	}
 	philo_datas->death_status = ALIVE;
 	if (ac == 5)
 		philo_datas->number_of_time_philo_ate = -1;

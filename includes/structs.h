@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:34:10 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/15 17:47:53 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/15 18:50:06 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ typedef struct s_philo_datas
 
 typedef struct s_philo
 {
-	pthread_mutex_t	left_fork;
-	pthread_mutex_t	right_fork;
+	pthread_mutex_t	*left_fork;
+	pthread_mutex_t	*right_fork;
 	pthread_mutex_t message;
 	t_philo_datas	*datas;
 	pthread_t		philo;
