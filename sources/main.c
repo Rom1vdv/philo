@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:40:35 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/16 12:30:25 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/16 17:29:22 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 int	init_datas(char **av, int ac, t_philo_datas *philo_datas)
 {
-	int i;
+	// int	i;
 
-	i = 0;
+	// i = 0;
 	philo_datas->number_of_philos = my_atoi(av[1]);
 	philo_datas->time_to_die = my_atoi(av[2]);
 	philo_datas->time_to_eat = my_atoi(av[3]);
 	philo_datas->time_to_sleep = my_atoi(av[4]);
-	philo_datas->forks = malloc(sizeof(philo_datas->forks) * philo_datas->number_of_philos);
+	philo_datas->forks = malloc(sizeof(*philo_datas->forks)
+			* philo_datas->number_of_philos);
 	if (!philo_datas->forks)
 		return (ERROR_ALLOCATION);
-	while(i < philo_datas->number_of_philos)
-	{
-		if (pthread_mutex_init(&philo_datas->forks[i], NULL) != 0)
-			return (ERROR_THREAD);
-		++i;
-	}
+	// while (i < philo_datas->number_of_philos)
+	// {
+	// 	if (pthread_mutex_init(&philo_datas->forks[i], NULL) != 0)
+	// 		return (ERROR_THREAD);
+	// 	++i;
+	// }
+	// pthread_mutex_init(&philo_datas->mutex_eat_count, NULL);
+	// pthread_mutex_init(&philo_datas->message, NULL);
 	philo_datas->death_status = ALIVE;
 	if (ac == 5)
 		philo_datas->number_of_time_philo_ate = -1;
@@ -53,6 +56,10 @@ int	init_philos(t_philo_datas *philo_datas, t_philo **array_of_philos)
 		return (init_philo_errors);
 	if (init_philo_errors == ERROR_THREAD)
 		return (init_philo_errors);
+	init_philo_errors = init_mutexes(philo_datas);
+	if (init_philo_errors == ERROR_THREAD)
+		return (init_philo_errors);
+	check_philo_status(array_of_philos);
 	init_philo_errors = join_threads(philo_datas, array_of_philos);
 	if (init_philo_errors == ERROR_THREAD)
 		return (init_philo_errors);
@@ -64,11 +71,11 @@ int	main(int ac, char **av)
 	t_philo_datas	*philo_datas;
 	t_philo			**array_of_philos;
 	int				error_status;
-	
-	array_of_philos = NULL;
-	philo_datas = malloc(sizeof(*philo_datas));
+
 	if (ac != 5 && ac != 6)
 		return (error_handling(ERROR_ARG_AMOUNT));
+	array_of_philos = NULL;
+	philo_datas = malloc(sizeof(*philo_datas));
 	error_status = validate_input_args(av);
 	if (error_status == ERROR_ARG_VALIDITY)
 		return (error_handling(error_status));
@@ -81,5 +88,7 @@ int	main(int ac, char **av)
 	if (error_status == ERROR_THREAD)
 		return (error_handling(error_status));
 	free(philo_datas->forks);
+	free(philo_datas);
+	// destroy_mutexes(philo_datas);
 	return (SUCCESS);
 }

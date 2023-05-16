@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 11:35:23 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/16 12:41:14 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/16 16:38:52 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	my_sleep(int current_time, t_philo_datas *philo_datas)
 {
-	long	start_time;
+	long		start_time;
 
 	start_time = calculate_time();
 	while (1)
@@ -23,7 +23,7 @@ void	my_sleep(int current_time, t_philo_datas *philo_datas)
 		if (philo_datas->death_status == DEAD)
 		{	
 			pthread_mutex_unlock(&philo_datas->mutex_death_status);
-			break;
+			break ;
 		}
 		pthread_mutex_unlock(&philo_datas->mutex_death_status);
 		if (calculate_time() - start_time >= current_time)

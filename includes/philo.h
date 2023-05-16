@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:42:02 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/11 11:50:20 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/16 16:08:07 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "utils.h"
 # include "init_philos.h"
 # include "dining_philo_problem.h"
+# include "death_status.h"
 
 # define ALIVE 1
 # define DEAD 0

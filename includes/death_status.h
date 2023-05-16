@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_philos.h                                      :+:      :+:    :+:   */
+/*   death_status.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 15:16:46 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/16 17:27:59 by romvan-d         ###   ########.fr       */
+/*   Created: 2023/05/16 16:06:46 by romvan-d          #+#    #+#             */
+/*   Updated: 2023/05/16 16:07:25 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INIT_PHILOS_H
-# define INIT_PHILOS_H
+#ifndef DEATH_STATUS_H
+# define DEATH_STATUS_H
 # include "philo.h"
 
-int		create_threads(t_philo_datas *philo_datas, t_philo **array_of_philos);
-int		join_threads(t_philo_datas *philo_datas, t_philo **array_of_philos);
 void	check_philo_status(t_philo **array_of_philo);
-int		init_mutexes(t_philo_datas *philo_datas);
 
 #endif
