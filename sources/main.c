@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:40:35 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/15 18:52:31 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:30:25 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ int	init_philos(t_philo_datas *philo_datas, t_philo **array_of_philos)
 		return (ERROR_ALLOCATION);
 	init_philo_errors = create_threads(philo_datas, array_of_philos);
 	if (init_philo_errors == ERROR_ALLOCATION)
-		return (ERROR_ALLOCATION);
+		return (init_philo_errors);
 	if (init_philo_errors == ERROR_THREAD)
-		return (ERROR_THREAD);
+		return (init_philo_errors);
 	init_philo_errors = join_threads(philo_datas, array_of_philos);
 	if (init_philo_errors == ERROR_THREAD)
-		return (ERROR_THREAD);
+		return (init_philo_errors);
 	return (SUCCESS);
 }
 
@@ -63,19 +63,23 @@ int	main(int ac, char **av)
 {	
 	t_philo_datas	*philo_datas;
 	t_philo			**array_of_philos;
+	int				error_status;
 	
 	array_of_philos = NULL;
 	philo_datas = malloc(sizeof(*philo_datas));
 	if (ac != 5 && ac != 6)
 		return (error_handling(ERROR_ARG_AMOUNT));
-	if (validate_input_args(av) == ERROR_ARG_VALIDITY)
-		return (error_handling(ERROR_ARG_VALIDITY));
-	if (init_datas(av, ac, philo_datas) == ERROR_ALLOCATION)
-		return (error_handling(ERROR_ALLOCATION));
-	if (init_philos(philo_datas, array_of_philos) == ERROR_ALLOCATION)
-		return (error_handling(ERROR_ALLOCATION));
-	if (init_philos(philo_datas, array_of_philos) == ERROR_THREAD)
-		return (error_handling(ERROR_THREAD));
+	error_status = validate_input_args(av);
+	if (error_status == ERROR_ARG_VALIDITY)
+		return (error_handling(error_status));
+	error_status = init_datas(av, ac, philo_datas);
+	if (error_status == ERROR_ALLOCATION)
+		return (error_handling(error_status));
+	error_status = init_philos(philo_datas, array_of_philos);
+	if (error_status == ERROR_ALLOCATION)
+		return (error_handling(error_status));
+	if (error_status == ERROR_THREAD)
+		return (error_handling(error_status));
 	free(philo_datas->forks);
 	return (SUCCESS);
 }

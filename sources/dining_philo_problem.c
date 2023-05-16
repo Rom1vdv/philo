@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:05:42 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/15 18:51:06 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:43:46 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ void	*run_process(void *arg)
 	t_philo	*philo;
 	
 	philo = (t_philo *) arg;
+	// if (philo->philo_id == 0)
+	// {
+	// 	while (1) {}
+	// }
+	printf("eat count is %d ; philo id is : %d\n", philo->eat_count, philo->philo_id);
 	if (philo->philo_id % 2 == 0)
 		my_sleep(philo->datas->time_to_eat / 2, philo->datas);
 	philo->last_meal = calculate_time();
