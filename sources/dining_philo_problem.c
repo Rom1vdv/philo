@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:05:42 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/16 16:46:47 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:24:35 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	philo_is_eating(t_philo *philo)
 	pthread_mutex_lock(philo->right_fork);
 	routine_message(philo, "has taken a fork");
 	routine_message(philo, "is eating");
+	pthread_mutex_lock(&philo->datas->mutex_last_meal);
 	philo->last_meal = calculate_time();
+	pthread_mutex_unlock(&philo->datas->mutex_last_meal);
 	my_sleep(philo->datas->time_to_eat, philo->datas);
 	pthread_mutex_lock(&philo->datas->mutex_eat_count);
 	philo->eat_count++;

@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:48:49 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/16 17:29:14 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:21:06 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,13 @@ int	init_mutexes(t_philo_datas *philo_datas)
 			return (ERROR_THREAD);
 		++i;
 	}
-	if (pthread_mutex_init(&philo_datas->mutex_eat_count, NULL))
+	if (pthread_mutex_init(&philo_datas->mutex_last_meal, NULL) != 0)
 		return (ERROR_THREAD);
-	if (pthread_mutex_init(&philo_datas->message, NULL))
+	if (pthread_mutex_init(&philo_datas->mutex_eat_count, NULL) != 0)
 		return (ERROR_THREAD);
-	if (pthread_mutex_init(&philo_datas->mutex_death_status, NULL))
+	if (pthread_mutex_init(&philo_datas->message, NULL) != 0)
+		return (ERROR_THREAD);
+	if (pthread_mutex_init(&philo_datas->mutex_death_status, NULL) != 0)
 		return (ERROR_THREAD);
 	return (SUCCESS);
 }
@@ -91,4 +93,3 @@ int	join_threads(t_philo_datas *philo_datas, t_philo **array_of_philos)
 	}
 	return (SUCCESS);
 }
-;

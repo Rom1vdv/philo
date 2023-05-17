@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:40:35 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/16 17:29:22 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:17:36 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ int	init_philos(t_philo_datas *philo_datas, t_philo **array_of_philos)
 			* philo_datas->number_of_philos);
 	if (!array_of_philos)
 		return (ERROR_ALLOCATION);
+	init_philo_errors = init_mutexes(philo_datas);
+	if (init_philo_errors == ERROR_THREAD)
+		return (init_philo_errors);
 	init_philo_errors = create_threads(philo_datas, array_of_philos);
 	if (init_philo_errors == ERROR_ALLOCATION)
 		return (init_philo_errors);
-	if (init_philo_errors == ERROR_THREAD)
-		return (init_philo_errors);
-	init_philo_errors = init_mutexes(philo_datas);
 	if (init_philo_errors == ERROR_THREAD)
 		return (init_philo_errors);
 	check_philo_status(array_of_philos);
@@ -87,8 +87,8 @@ int	main(int ac, char **av)
 		return (error_handling(error_status));
 	if (error_status == ERROR_THREAD)
 		return (error_handling(error_status));
+	// destroy_mutexes(philo_datas);
 	free(philo_datas->forks);
 	free(philo_datas);
-	// destroy_mutexes(philo_datas);
 	return (SUCCESS);
 }
