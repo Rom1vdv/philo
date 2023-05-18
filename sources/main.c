@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 14:40:35 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/18 12:09:52 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/18 16:42:19 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	main(int ac, char **av)
 		return (error_handling(error_status));
 	if (error_status == ERROR_THREAD)
 		return (error_handling(error_status));
-	// destroy_mutexes(philo_datas);
-	// destroy_philos(array_of_philos);
+	destroy_mutexes(philo_datas);
+	destroy_philos(array_of_philos);
 	return (SUCCESS);
 }

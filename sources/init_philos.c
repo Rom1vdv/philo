@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:48:49 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/18 14:50:18 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/18 16:06:15 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	allocate_threads_memory(t_philo **array_of_philos,
 		array_of_philos[thread_index]->eat_count = 0;
 		array_of_philos[thread_index]->philo_id = thread_index + 1;
 		array_of_philos[thread_index]->datas = philo_datas;
-		array_of_philos[thread_index]->last_meal = 0;
+		array_of_philos[thread_index]->last_meal = calculate_time();
 		array_of_philos[thread_index]->left_fork = &philo_datas
 			->forks[thread_index];
 		array_of_philos[thread_index]->right_fork = &philo_datas
