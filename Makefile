@@ -6,7 +6,7 @@
 #    By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/08 15:04:59 by romvan-d          #+#    #+#              #
-#    Updated: 2023/05/17 15:24:20 by romvan-d         ###   ########.fr        #
+#    Updated: 2023/05/18 15:01:13 by romvan-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = philo
 
 FILES = main parsing init_philos dining_philo_problem death_status
 
-UTILS_FILES = destroy_philos my_atoi timestamp error_handling displaying_message my_sleep
+UTILS_FILES = destroy_philos my_atoi timestamp error_handling routine_message my_sleep
 
 SRCS = $(addprefix utils/, $(addsuffix .c, $(UTILS_FILES))) \
 	$(addprefix sources/, $(addsuffix .c, $(FILES)))

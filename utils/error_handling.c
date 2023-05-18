@@ -6,11 +6,13 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 11:36:11 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/11 17:28:49 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/18 11:48:35 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+// int	clean_program(int error_type, t_philo)
 
 int	error_handling(int error_type)
 {

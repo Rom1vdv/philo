@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 16:06:21 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/17 15:26:21 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:04:58 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	check_philo_status(t_philo **array_of_philo)
 			pthread_mutex_unlock(&array_of_philo[thread_index]->datas->mutex_last_meal);
 			pthread_mutex_lock(&array_of_philo[thread_index]->datas->mutex_eat_count);
 			if (array_of_philo[thread_index]->eat_count >= array_of_philo[thread_index]->datas->number_of_time_philo_ate)
-				amount_of_time_eaten++;
+				++amount_of_time_eaten;
 			pthread_mutex_unlock(&array_of_philo[thread_index]->datas->mutex_eat_count);
 			++thread_index;
 		}

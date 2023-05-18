@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:05:42 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/17 15:24:35 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:06:23 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ void	*run_process(void *arg)
 	philo = (t_philo *) arg;
 	if (philo->philo_id % 2 == 0)
 		my_sleep(philo->datas->time_to_eat / 2, philo->datas);
+	pthread_mutex_lock(&philo->datas->mutex_last_meal);
 	philo->last_meal = calculate_time();
+	pthread_mutex_unlock(&philo->datas->mutex_last_meal);
 	while (1)
 	{
 		pthread_mutex_lock(&philo->datas->mutex_death_status);

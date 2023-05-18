@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:28:16 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/16 17:19:17 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/18 11:35:51 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,6 @@ void	destroy_mutexes(t_philo_datas *philo_datas)
 	pthread_mutex_destroy(&philo_datas->mutex_eat_count);
 	pthread_mutex_destroy(&philo_datas->message);
 	pthread_mutex_destroy(&philo_datas->mutex_death_status);
+	pthread_mutex_destroy(&philo_datas->mutex_last_meal);
+	return ;
 }
