@@ -6,14 +6,14 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:35:16 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/16 17:19:23 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:31:59 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
 
-void	destroy_philos(t_philo **array_of_philos);
+void	destroy_philos(t_philo_datas *philo_datas, t_philo **array_of_philos);
 int		my_atoi(const char *str);
 long	calculate_time(void);
 int		error_handling(int error_type);

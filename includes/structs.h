@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 15:34:10 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/18 12:01:11 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/23 16:50:16 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_philo_datas
 	pthread_mutex_t	mutex_death_status;
 	pthread_mutex_t	message;
 	pthread_mutex_t	mutex_eat_count;
-	pthread_mutex_t mutex_last_meal;
+	pthread_mutex_t	mutex_last_meal;
 	pthread_mutex_t	*forks;
 }	t_philo_datas;
 

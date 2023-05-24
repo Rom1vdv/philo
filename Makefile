@@ -6,7 +6,7 @@
 #    By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/08 15:04:59 by romvan-d          #+#    #+#              #
-#    Updated: 2023/05/18 16:28:13 by romvan-d         ###   ########.fr        #
+#    Updated: 2023/05/24 15:33:21 by romvan-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ RM = rm -f
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -I ./includes -pthread #-fsanitize=thread -g
+CFLAGS = -Wall -Wextra -Werror -I ./includes -pthread #-fsanitize=address -g
 
 
 $(NAME): $(OBJS)

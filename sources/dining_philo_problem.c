@@ -6,13 +6,13 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:05:42 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/18 15:58:06 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:11:44 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	philo_is_eating(t_philo *philo)
+static void	philo_is_eating(t_philo *philo)
 {
 	pthread_mutex_lock(philo->left_fork);
 	routine_message(philo, "has taken a fork");
