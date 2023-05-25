@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 14:28:16 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/24 16:20:50 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/25 17:51:14 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	destroy_philos(t_philo_datas *philo_datas, t_philo **array_of_philos)
 {
-	(void)philo_datas;
+	free(philo_datas->forks);
 	free(*array_of_philos);
 }
 
-void	destroy_mutexes(t_philo_datas *philo_datas)
+void	destroy_philo_datas(t_philo_datas *philo_datas)
 {
 	int	i;
 
