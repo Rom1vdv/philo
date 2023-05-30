@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 11:36:11 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/30 15:39:42 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:51:37 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@ static int	handle_allocation_error(t_philo_datas *philo_datas,
 	t_philo *array_of_philos, int mode)
 {
 	if (mode == 1)
-	{
-		free(philo_datas);
 		printf("Error : Memory could not be allocated\n");
-	}
 	else if (mode == 2)
 	{
 		free(philo_datas->forks);
