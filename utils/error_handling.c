@@ -6,7 +6,7 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 11:36:11 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/30 15:26:05 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:39:42 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	handle_allocation_error(t_philo_datas *philo_datas,
 		free(array_of_philos);
 		printf("Error : Memory could not be allocated\n");
 	}
-	return (SUCCESS);
+	return (ERROR_ALLOCATION);
 }
 
 static int	handle_thread_error(t_philo_datas *philo_datas,
@@ -47,7 +47,7 @@ static int	handle_thread_error(t_philo_datas *philo_datas,
 		free(array_of_philos);
 		printf("Error : There was an issue with allocating the threads\n");
 	}
-	return (SUCCESS);
+	return (ERROR_THREAD);
 }
 
 int	error_handling(int error_type, t_philo_datas *philo_datas,
