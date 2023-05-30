@@ -6,13 +6,13 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 14:48:49 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/24 16:21:35 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:04:57 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static int	allocate_threads_memory(t_philo *array_of_philos,
+static int	allocate_philo_datas(t_philo *array_of_philos,
 		t_philo_datas *philo_datas)
 {
 	int	thread_index;
@@ -39,7 +39,7 @@ int	create_threads(t_philo_datas *philo_datas, t_philo *array_of_philos)
 	int	allocate_threads_error;
 
 	thread_index = 0;
-	allocate_threads_error = allocate_threads_memory(array_of_philos,
+	allocate_threads_error = allocate_philo_datas(array_of_philos,
 			philo_datas);
 	philo_datas->start_time = calculate_time();
 	while (thread_index < philo_datas->number_of_philos)
