@@ -6,13 +6,13 @@
 /*   By: romvan-d <romvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 11:36:11 by romvan-d          #+#    #+#             */
-/*   Updated: 2023/05/30 15:14:20 by romvan-d         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:26:05 by romvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	handle_allocation_error(t_philo_datas *philo_datas,
+static int	handle_allocation_error(t_philo_datas *philo_datas,
 	t_philo *array_of_philos, int mode)
 {
 	if (mode == 1)
@@ -36,7 +36,7 @@ int	handle_allocation_error(t_philo_datas *philo_datas,
 	return (SUCCESS);
 }
 
-int	handle_thread_error(t_philo_datas *philo_datas,
+static int	handle_thread_error(t_philo_datas *philo_datas,
 	t_philo *array_of_philos, int mode)
 {
 	if (mode == 3)
